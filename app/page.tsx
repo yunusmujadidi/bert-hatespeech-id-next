@@ -32,7 +32,13 @@ export default function Home() {
   };
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-12">
-      <h1 className="text-5xl font-bold mb-2 text-center">Transformers.js</h1>
+      <h1 className="text-5xl font-bold mb-6 text-center">Transformers.js</h1>
+      <h2 className="text-2xl mb-4 text-center">
+        DETEKSI TWEET HATE SPEECH BERBAHASA INDONESIA
+        <br /> MENGGUNAKAN SUPPORT VECTOR MACHINE (SVM) DAN
+        <br /> BIDIRECTIONAL ENCODER REPRESENTATION FROM
+        <br /> TRANSFORMERS (BERT)
+      </h2>
       <h2 className="text-2xl mb-4 text-center">Next.js (server-side)</h2>
       <h2 className="text-xl mb-4 text-center">BERT Fine Tuning</h2>
       <input

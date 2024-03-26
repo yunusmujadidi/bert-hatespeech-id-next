@@ -11,12 +11,23 @@ export async function GET(request) {
       { status: 400 }
     );
   }
-  // Get the classification pipeline. When called for the first time,
-  // this will load the pipeline and cache it for future use.
-  const classifier = await PipelineSingleton.getInstance();
+  try {
+    // Get the classification pipeline. When called for the first time,
+    // this will load the pipeline and cache it for future use.
+    const classifier = await PipelineSingleton.getInstance();
 
-  // Actually perform the classification
-  const result = await classifier(text);
+    // Actually perform the classification
+    const result = await classifier(text);
 
-  return NextResponse.json(result);
+    return NextResponse.json(result);
+  } catch (error) {
+    // Handle the error
+    console.error(error);
+    return NextResponse.json(
+      {
+        error: "An error occurred while processing your request.",
+      },
+      { status: 500 }
+    );
+  }
 }
