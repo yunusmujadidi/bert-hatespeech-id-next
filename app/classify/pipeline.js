@@ -5,7 +5,7 @@ import { pipeline } from "@xenova/transformers";
 const P = () =>
   class PipelineSingleton {
     static task = "text-classification";
-    static model = "indobenchmark/indobert-base-p2";
+    static model = "Xenova/distilbert-base-uncased-finetuned-sst-2-english";
     static instance = null;
 
     static async getInstance(progress_callback = null) {
