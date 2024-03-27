@@ -1,25 +1,15 @@
 "use client";
 
-interface Result {
-  label: string;
-  score: number;
-}
-
-interface HomeProps {
-  result: Result | null;
-  ready: boolean | null;
-  classify: (text: string) => void;
-}
-
 import { useState } from "react";
 
 export default function Home() {
   // Keep track of the classification result and the model loading status.
-  const [ready, setReady] = useState<boolean | null>(null);
-  const [result, setResult] = useState<Result | null>(null);
-  const classify = async (text: string) => {
+  const [result, setResult] = useState(null);
+  const [ready, setReady] = useState<null | boolean>(null);
+
+  const classify = async (text: string | number | boolean) => {
     if (!text) return;
-    if (ready === null) setReady(false);
+    if (ready === null) setReady(null);
 
     // Make a request to the /classify route on the server.
     const result = await fetch(`/classify?text=${encodeURIComponent(text)}`);
@@ -32,22 +22,22 @@ export default function Home() {
   };
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-12">
-      <h1 className="text-5xl font-bold mb-6 text-center">Transformers.js</h1>
-      <h2 className="text-2xl mb-4 text-center">
+      <h1 className="text-5xl font-bold mb-2 text-center">Transformers.js</h1>
+      <h1 className="text-5xl font-bold mb-6 text-center">
         DETEKSI TWEET HATE SPEECH BERBAHASA INDONESIA
         <br /> MENGGUNAKAN SUPPORT VECTOR MACHINE (SVM) DAN
         <br /> BIDIRECTIONAL ENCODER REPRESENTATION FROM
         <br /> TRANSFORMERS (BERT)
+      </h1>
+      <h2 className="text-2xl mb-4 text-center">
+        Next.js template (server-side)
       </h2>
-      <h2 className="text-2xl mb-4 text-center">Next.js (server-side)</h2>
-      <h2 className="text-xl mb-4 text-center">BERT Fine Tuning</h2>
       <input
         type="text"
         className="w-full max-w-xs p-2 border border-gray-300 rounded mb-4"
         placeholder="Enter text here"
         onInput={(e) => {
-          const inputElement = e.target as HTMLInputElement;
-          classify(inputElement.value);
+          classify((e.target as HTMLInputElement).value);
         }}
       />
 
