@@ -1,4 +1,5 @@
 "use client";
+import { LoaderIcon } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
     if (ready === null) setReady(false);
 
     // Make a request to the /classify route on the server.
-    const response = await fetch(`/classify?text=${encodeURIComponent(text)}`);
+    const response = await fetch(`/models?text=${encodeURIComponent(text)}`);
 
     // If this is the first time we've made a request, set the ready flag.
     if (ready === null) setReady(true);
@@ -53,14 +54,16 @@ export default function Home() {
       />
       {ready !== null && (
         <div className="">
-          {!ready || !result
-            ? "Loading..."
-            : result.map((item, index) => (
-                <div key={index} className="mb-2">
-                  <h3 className="font-bold text-lg">{item.label}</h3>
-                  <p>Score: {item.score}</p>
-                </div>
-              ))}
+          {!ready || !result ? (
+            <LoaderIcon className="w-6 animate-spin" />
+          ) : (
+            result.map((item, index) => (
+              <div key={index} className="mb-2">
+                <h3 className="font-bold text-lg">{item.label}</h3>
+                <p>Score: {item.score}</p>
+              </div>
+            ))
+          )}
         </div>
       )}
     </main>

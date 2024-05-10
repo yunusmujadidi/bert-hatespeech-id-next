@@ -26,8 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/classify/route.js",
-    "app/classify/pipeline.js"
+    "app/models/route.js",
+    "app/models/pipeline.js"
   ],
   "exclude": ["node_modules"]
 }
