@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/app/components/Navbar";
-import { ViewTransitions } from "next-view-transitions";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,13 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ViewTransitions>
-      <html lang="en">
-        <body className={inter.className}>
-          <Navbar />
-          {children}
-        </body>
-      </html>
-    </ViewTransitions>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
   );
 }
