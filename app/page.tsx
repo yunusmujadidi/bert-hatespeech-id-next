@@ -1,5 +1,3 @@
-export const Home = () => {
-  return <div>xd</div>;
-};
-
-export default Home;
+export default function Home() {
+  return <div>xxdd</div>;
+}
