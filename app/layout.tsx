@@ -1,16 +1,17 @@
+import type React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import { cn } from "@/lib/utils";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
 
-const inter = Inter({ subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+});
 
 export const metadata: Metadata = {
-  title: "BERT Indonesian Hate Speech Detection",
-  description: "xd",
+  title: "Indonesian Hate Speech Detection ",
+  description: "Dashboard for Indonesian hate speech detection",
 };
 
 export default function RootLayout({
@@ -19,22 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={cn(
-          inter.className,
-          "antialiased, min-h-screen, flex flex-col"
-        )}
-      >
-        <SidebarProvider>
-          <AppSidebar />
-
-          <main>
-            <SidebarTrigger />
-            <Navbar />
-            {children}
-          </main>
-        </SidebarProvider>
+    <html lang="en" className="h-full">
+      <body className={`${spaceGrotesk.className} min-h-screen flex flex-col`}>
+        {children}
       </body>
     </html>
   );
