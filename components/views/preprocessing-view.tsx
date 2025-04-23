@@ -85,11 +85,9 @@ export function PreprocessingView() {
   return (
     <div className="space-y-8">
       <div className="section-header">
-        <h1 className="text-4xl font-heading tracking-tight">
-          Text Preprocessing
-        </h1>
+        <h1 className="text-4xl font-heading tracking-tight">Preprocessing</h1>
         <p className="text-main-foreground font-base mt-2">
-          See how tweets are cleaned and processed through each step
+          Hasil dan step preprocessing pada penelitian
         </p>
       </div>
 

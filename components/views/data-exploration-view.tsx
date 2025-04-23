@@ -8,7 +8,7 @@ export function DataExplorationView() {
           Data Exploration
         </h1>
         <p className="text-main-foreground font-base mt-2">
-          Analisis dan wawasan dari dataset yang dikumpulkan
+          Hasil data exploration pada penelitian
         </p>
       </div>
 

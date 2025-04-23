@@ -3,7 +3,9 @@ export function ConclusionView() {
     <div className="space-y-8">
       <div className="section-header">
         <h1 className="text-4xl font-heading tracking-tight">Conclusion</h1>
-        <p className="text-main-foreground font-base mt-2">Kesimpulan</p>
+        <p className="text-main-foreground font-base mt-2">
+          Kesimpulan pada penelitian
+        </p>
       </div>
 
       <div className="neo-card p-6">

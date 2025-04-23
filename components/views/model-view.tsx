@@ -38,7 +38,7 @@ export function ModelView() {
           Model & Results
         </h1>
         <p className="text-main-foreground font-base mt-2">
-          Model machine learning dan evaluasi performa
+          Hasil dan evaluasi model
         </p>
       </div>
 

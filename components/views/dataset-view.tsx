@@ -73,8 +73,8 @@ export function DatasetView() {
       <div className="section-header">
         <h1 className="text-4xl font-heading tracking-tight">Dataset</h1>
         <p className="text-main-foreground font-base mt-2">
-          Indonesian Abusive and Hate Speech Twitter Text Multi-Labeled Hate
-          Speech and Abusive Indonesian Twitter Text
+          Informasi dataset dari Indonesian Abusive and Hate Speech Twitter Text
+          Multi-Labeled Hate Speech and Abusive Indonesian Twitter Text
         </p>
       </div>
 

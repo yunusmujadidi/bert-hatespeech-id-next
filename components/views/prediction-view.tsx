@@ -4,11 +4,9 @@ export function PredictionView() {
   return (
     <div className="space-y-8">
       <div className="section-header">
-        <h1 className="text-4xl font-heading tracking-tight">
-          Live Prediction
-        </h1>
+        <h1 className="text-4xl font-heading tracking-tight">Prediction</h1>
         <p className="text-main-foreground font-base mt-2">
-          Uji model IndoBERT untuk deteksi ujaran kebencian secara langsung
+          Buat prediksi hate speech secara otomatis menggunakan model IndoBERT
         </p>
       </div>
 
